@@ -193,4 +193,5 @@ Used by `Assign-ResourcesToAccessPackages.ps1` to define which resources are ass
 
 ## 5. Support
 
+**Contributions and feedback are welcome!**
 For questions or issues, please open an issue in this repository.

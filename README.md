@@ -177,7 +177,7 @@ Used by `Assign-ResourcesToAccessPackages.ps1` to define which resources are ass
 - PowerShell 7+
 - Required modules:
   - `Microsoft.Graph.Identity.Governance`
-  - `Microsoft.Graph.Beta.Identity.Governance` (for some resource assignments)
+  - `Microsoft.Graph.Beta.Identity.Governance` (for resource assignment script to function correctly)
   - `ImportExcel`
 - Appropriate permissions in Microsoft Entra ID (Azure AD)
 - Entra ID Governance licensing

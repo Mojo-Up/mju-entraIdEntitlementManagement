@@ -4,6 +4,8 @@
 
 This repository provides PowerShell scripts to automate the management of Microsoft Entra ID (Azure AD) Entitlement Management. The scripts use Excel files as input for bulk operations, making it easy to create catalogs, access packages, assignment policies, and assign resources at scale.
 
+![Entra ID Entitlement Management Solution](images/EntraGovernance.png)
+
 **Table of Contents**
 - [Entra ID Entitlement Management Automation](#entra-id-entitlement-management-automation)
   - [1. Excel File Imports](#1-excel-file-imports)

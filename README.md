@@ -199,5 +199,5 @@ For questions or issues, please open an issue in this repository.
 
 This work was inspired and built from the great work of Christian Frohn.
 
-[Christian's Frohns Github](https://github.com/ChrFrohn/Entra)
-[Christian's website](https://www.christianfrohn.dk/category/microsoft-entra/)
+* [Christian's Frohns Github](https://github.com/ChrFrohn/Entra)
+* [Christian's website](https://www.christianfrohn.dk/category/microsoft-entra/)

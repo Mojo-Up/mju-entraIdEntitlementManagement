@@ -8,26 +8,45 @@ This repository provides PowerShell scripts to automate the management of Micros
 
 **Table of Contents**
 - [Entra ID Entitlement Management Automation](#entra-id-entitlement-management-automation)
-  - [1. Excel File Imports](#1-excel-file-imports)
-    - [1.1 catalogs-example.xlsx](#11-catalogs-examplexlsx)
-    - [1.2 accesspackages-example.xlsx](#12-accesspackages-examplexlsx)
-    - [1.3 assignresourcestoaccesspackage-example.xlsx](#13-assignresourcestoaccesspackage-examplexlsx)
-  - [2. PowerShell Scripts](#2-powershell-scripts)
-    - [2.1 Create-EntitlementCatalogs.ps1](#21-create-entitlementcatalogsps1)
-    - [2.2 Create-EntitlementAccessPackages.ps1](#22-create-entitlementaccesspackagesps1)
-    - [2.3 Assign-ResourcesToAccessPackages.ps1](#23-assign-resourcestoaccesspackagesps1)
-  - [3. Prerequisites](#3-prerequisites)
-  - [4. Getting Started](#4-getting-started)
+  - [1. Prerequisites](#1-prerequisites)
+  - [2. Getting Started](#2-getting-started)
+  - [3. Excel File Imports](#3-excel-file-imports)
+    - [3.1 catalogs-example.xlsx](#31-catalogs-examplexlsx)
+    - [3.2 accesspackages-example.xlsx](#32-accesspackages-examplexlsx)
+    - [3.3 assignresourcestoaccesspackage-example.xlsx](#33-assignresourcestoaccesspackage-examplexlsx)
+  - [4. PowerShell Scripts](#4-powershell-scripts)
+    - [4.1 Create-EntitlementCatalogs.ps1](#41-create-entitlementcatalogsps1)
+    - [4.2 Create-EntitlementAccessPackages.ps1](#42-create-entitlementaccesspackagesps1)
+    - [4.3 Assign-ResourcesToAccessPackages.ps1](#43-assign-resourcestoaccesspackagesps1)
   - [5. Support](#5-support)
   - [Thanks](#thanks)
 
-## 1. Excel File Imports
+## 1. Prerequisites
+
+- PowerShell 7+
+- Required modules:
+  - `Microsoft.Graph.Identity.Governance`
+  - `Microsoft.Graph.Beta.Identity.Governance` (for some resource assignments)
+  - `ImportExcel`
+- Appropriate permissions in Microsoft Entra ID (Azure AD)
+- Entra ID Governance licensing
+
+## 2. Getting Started
+
+1. Populate the Excel files with your catalog, access package, and resource assignment data. Refer to the `.DESCRIPTION` section in each script for required columns and examples.
+2. Run the scripts in the following order:
+   1. `Create-EntitlementCatalogs.ps1`
+   2. `Create-EntitlementAccessPackages.ps1`
+   3. `Assign-ResourcesToAccessPackages.ps1`
+3. Review script output for any errors or warnings.
+   
+## 3. Excel File Imports
 
 Each script uses an Excel file as input. The required columns and their meanings are described in the `.DESCRIPTION` section of each PowerShell script. Please refer to the top comments in each script for detailed column definitions and examples.
 
 > **Tip:** Use the provided example files as templates. Ensure all required columns are present and data is accurate before running the scripts.
 
-### 1.1 catalogs-example.xlsx
+### 3.1 catalogs-example.xlsx
 
 Used by `Create-EntitlementCatalogs.ps1` to define catalogs.
 
@@ -38,7 +57,7 @@ Used by `Create-EntitlementCatalogs.ps1` to define catalogs.
 
 ![catalogs-example.xlsx](images/ExcelCatalogs.png)  
 
-### 1.2 accesspackages-example.xlsx
+### 3.2 accesspackages-example.xlsx
 Used by `Create-EntitlementAccessPackages.ps1` to define access packages and assignment policies.
 
 This excel import allows for the creation and assignment of access packages to catalogs, assigment of a group that can access package and the automated creation of access package policies.
@@ -70,7 +89,7 @@ This excel import allows for the creation and assignment of access packages to c
 
 ![accesspackages-examples.xlsx](images/ExcelAccessPackages.png)
 
-### 1.3 assignresourcestoaccesspackage-example.xlsx
+### 3.3 assignresourcestoaccesspackage-example.xlsx
 
 Used by `Assign-ResourcesToAccessPackages.ps1` to define which resources are assigned to which access packages.
 
@@ -95,9 +114,9 @@ Used by `Assign-ResourcesToAccessPackages.ps1` to define which resources are ass
 
 ![assignresourcestoaccesspackage-example.xlsx](images/ExcelAssignResources.png)  
 
-## 2. PowerShell Scripts
+## 4. PowerShell Scripts
 
-### 2.1 Create-EntitlementCatalogs.ps1
+### 4.1 Create-EntitlementCatalogs.ps1
 - **Purpose:**
   - Creates entitlement management catalogs in Entra ID Entitlement Management using data from an Excel file.
 - **Usage:**
@@ -116,7 +135,7 @@ Used by `Assign-ResourcesToAccessPackages.ps1` to define which resources are ass
 ![PowerShell - Create-EntitlementCatalogs.ps1](images/Create-Catalogs-PWSH.png)
 ![Catalogs - Entra ID Portal](images/EntraPortalCatalogs.png)  
 
-### 2.2 Create-EntitlementAccessPackages.ps1
+### 4.2 Create-EntitlementAccessPackages.ps1
 
 - **Purpose:**
   - Creates access packages and assignment policies in Entra ID Entitlement Management using data from an Excel file.
@@ -143,7 +162,7 @@ Used by `Assign-ResourcesToAccessPackages.ps1` to define which resources are ass
 
 ![Access Packages Policies (Approval)- Entra ID Portal](images/Access%20Packages%20Policies%20(Approval)-%20Entra%20ID%20Portal.png)  
 
-### 2.3 Assign-ResourcesToAccessPackages.ps1
+### 4.3 Assign-ResourcesToAccessPackages.ps1
 
 - **Purpose:**
   - Assigns resources (such as groups, applications, or SharePoint sites) to Entra ID Entitlement Management access packages as defined in an Excel file.
@@ -171,25 +190,6 @@ Used by `Assign-ResourcesToAccessPackages.ps1` to define which resources are ass
 ![Access Package Resource Role - Entra ID Portal](images/Access%20Package%20Resource%20Role%20-%20Entra%20ID%20Portal.png)
 
 ![Access Package Resource Role 2 - Entra ID Portal](images/Access%20Package%20Resource%20Role%202%20-%20Entra%20ID%20Portal.png)  
-
-## 3. Prerequisites
-
-- PowerShell 7+
-- Required modules:
-  - `Microsoft.Graph.Identity.Governance`
-  - `Microsoft.Graph.Beta.Identity.Governance` (for some resource assignments)
-  - `ImportExcel`
-- Appropriate permissions in Microsoft Entra ID (Azure AD)
-- Entra ID Governance licensing
-
-## 4. Getting Started
-
-1. Populate the Excel files with your catalog, access package, and resource assignment data. Refer to the `.DESCRIPTION` section in each script for required columns and examples.
-2. Run the scripts in the following order:
-   1. `Create-EntitlementCatalogs.ps1`
-   2. `Create-EntitlementAccessPackages.ps1`
-   3. `Assign-ResourcesToAccessPackages.ps1`
-3. Review script output for any errors or warnings.
 
 ## 5. Support
 

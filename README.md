@@ -4,8 +4,6 @@
 
 This repository provides PowerShell scripts to automate the management of Microsoft Entra ID (Azure AD) Entitlement Management. The scripts use Excel files as input for bulk operations, making it easy to create catalogs, access packages, assignment policies, and assign resources at scale.
 
-![Entra ID Entitlement Management](images/EntraGovernance.png)  
-
 **Table of Contents**
 - [Entra ID Entitlement Management Automation](#entra-id-entitlement-management-automation)
   - [1. Excel File Imports](#1-excel-file-imports)
@@ -19,7 +17,7 @@ This repository provides PowerShell scripts to automate the management of Micros
   - [3. Prerequisites](#3-prerequisites)
   - [4. Getting Started](#4-getting-started)
   - [5. Support](#5-support)
-
+  - [Thanks](#thanks)
 
 ## 1. Excel File Imports
 
@@ -177,7 +175,7 @@ Used by `Assign-ResourcesToAccessPackages.ps1` to define which resources are ass
 - PowerShell 7+
 - Required modules:
   - `Microsoft.Graph.Identity.Governance`
-  - `Microsoft.Graph.Beta.Identity.Governance` (for resource assignment script to function correctly)
+  - `Microsoft.Graph.Beta.Identity.Governance` (for some resource assignments)
   - `ImportExcel`
 - Appropriate permissions in Microsoft Entra ID (Azure AD)
 - Entra ID Governance licensing
@@ -193,5 +191,11 @@ Used by `Assign-ResourcesToAccessPackages.ps1` to define which resources are ass
 
 ## 5. Support
 
-**Contributions and feedback are welcome!**
 For questions or issues, please open an issue in this repository.
+v
+## Thanks
+
+This work was inspired and built from the great work of Christian Frohn.
+
+[Christian's Frohns Github](https://github.com/ChrFrohn/Entra)
+[Christian's website](https://www.christianfrohn.dk/category/microsoft-entra/)

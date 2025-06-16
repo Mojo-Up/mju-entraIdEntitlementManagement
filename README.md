@@ -194,7 +194,7 @@ Used by `Assign-ResourcesToAccessPackages.ps1` to define which resources are ass
 ## 5. Support
 
 For questions or issues, please open an issue in this repository.
-v
+
 ## Thanks
 
 This work was inspired and built from the great work of Christian Frohn.
